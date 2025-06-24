@@ -4,15 +4,18 @@ const calcularBtn = document.getElementById("calcular");
 const resultadoP = document.getElementById("resultado");
 const opSelec = document.getElementById("op");
 
-opSelec.addEventListener("change", () => {
-    if (opSelec.value === "dividir") {
+function validarDivision () { 
+    const num2=parseFloat(num2Input.value); 
+    if (opSelec.value === "dividir" && num2 === 0){ 
         calcularBtn.disabled = true;
-        resultadoP.innerText = "La operación de división está deshabilitada.";
-    } else {
+        resultadoP.innerText = "No se puede dividir por cero.";
+    } else { 
         calcularBtn.disabled = false;
         resultadoP.innerText = '';
     }
-});
+}
+opSelec.addEventListener("change",validarDivision);
+num2Input.addEventListener("input",validarDivision);
 
 calcularBtn.addEventListener("click", () => {
     const num1=parseFloat(num1Input.value);
@@ -29,9 +32,12 @@ calcularBtn.addEventListener("click", () => {
         case "multiplicar":
             resultado = num1*num2;
             break;
+        case "dividir": 
+            resultado = num1/num2;
+            break;
         default:
             resultado = "Operacion invalida";
     }
 
-    resultadoP.innerText = `Resultado: ${resultado}`;
+    resultadoP.innerText = `Resultado: ${resultado.toFixed(2)}`;
 });
