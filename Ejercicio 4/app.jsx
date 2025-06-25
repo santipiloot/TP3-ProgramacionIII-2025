@@ -1,15 +1,18 @@
 function App() {
-    const [BotonIzquierdo, setBotonIzquierdo] = React.useState(true);
+    //Usamos state para acceder a los estados del boton izquierdo y poder desactivarlo/activarlo
+    const [BotonIzquierdo, setBotonIzquierdo] = React.useState(true); 
 
+    //Funcion que se va a lanzar al apretar el boton izquierdo 
     const BtnIzquierdo = () => {
         setBotonIzquierdo(false);
     };
 
+    //Funcion que se va a lanzar al apretar el boton derecho
     const BtnDerecho = () => {
         setBotonIzquierdo(true);
     };
-    return (
-        <div className="botones">
+    return ( //HTML que se va a renderizar 
+        <div className="botones"> 
             <button onClick={BtnIzquierdo} disabled={!BotonIzquierdo}>
                 Izquierdo
             </button>
