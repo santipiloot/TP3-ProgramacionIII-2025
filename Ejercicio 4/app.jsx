@@ -1,6 +1,6 @@
 function App() {
     //Usamos state para acceder a los estados del boton izquierdo y poder desactivarlo/activarlo
-    const [BotonIzquierdo, setBotonIzquierdo] = React.useState(true); 
+    const [BotonIzquierdo, setBotonIzquierdo]=React.useState(true); 
 
     //Funcion que se va a lanzar al apretar el boton izquierdo 
     const BtnIzquierdo = () => {
@@ -22,7 +22,3 @@ function App() {
         </div>
     );
 }
-
-const container = document.getElementById("root");
-const root = ReactDOM.createRoot(container);
-root.render(<App />);

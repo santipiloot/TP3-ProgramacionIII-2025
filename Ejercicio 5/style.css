@@ -1,6 +1,6 @@
-.calculadora input,
-.calculadora select,
-.calculadora button {
+.form__calculadora input,
+.form__calculadora select,
+.form__calculadora button {
     margin: 5px 10px 15px 0;
     font-size: 1rem;
     padding: 8px;
